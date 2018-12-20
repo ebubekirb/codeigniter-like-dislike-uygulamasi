@@ -37,7 +37,24 @@ class User extends CI_Controller{
 
 		else{
 
-			echo "Ok";
+			$this->load->model("user_model");
+
+			$user = $this->user_model->get(array(
+
+				"username" => $this->input->post("username"),
+				"password" => md5($this->input->post("password"))
+			));
+
+			if ($user) {
+				
+				echo "Giriş başarılı";	
+			}
+
+			else{
+
+				$this->session->set_flashdata("error", "Böyle bir kullanıcı bulunmamaktadır.");
+				$this->login_form();
+			}
 		}
 	}
 }
