@@ -27,11 +27,27 @@ class Post extends CI_Controller{
 	}
 
 
+	public function vote(){
 
-	public function logout(){
+		$post_id = $this->input->post("post_id");
+		$vote_status = $this->input->post("vote_status");
 
-		echo "logout";
+		$user 		= $this->session->userdata("user");
+		$user_id	= $user->id;
+
+		$this->load->model("Vote_model");
+
+		$insert = $this->Vote_model->add(array(
+
+			"post_id" 		=> $post_id,
+			"user_id" 		=> $user_id,
+			"vote_status"	=> $vote_status
+		));
+
+		echo $insert;
 	}
+
+
 }
 
  ?>

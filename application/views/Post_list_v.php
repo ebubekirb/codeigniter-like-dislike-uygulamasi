@@ -35,11 +35,11 @@
 			</p>
 
 			<div class="thumbs_container">
-				<button class="btn btn-success">
+				<button class="btn btn-success likeBtn" data-id="<?php echo $post->id; ?>">
 					<span class="glyphicon glyphicon-thumbs-up"></span>
 					<span class="like_count">(123)</span>
 				</button>
-				<button class="btn btn-danger">
+				<button class="btn btn-danger dislikeBtn" data-id="<?php echo $post->id; ?>">
 					<span class="glyphicon glyphicon-thumbs-down"></span>
 					<span class="dislike_count">(10)</span>
 				</button>
@@ -51,6 +51,9 @@
 		</div>
 	</div>
 </div>
+
+<script src="<?php echo base_url("assets/js/jquery-3.3.1.min.js") ?>"></script>
+<script src="<?php echo base_url("assets/js/custom.js") ?>"></script>
 
 </body>
 </html>

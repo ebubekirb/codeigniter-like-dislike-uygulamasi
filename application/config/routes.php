@@ -57,4 +57,5 @@ $route["giris-yap"] = "user/login_form";
 $route["giris"] = "user/login";
 $route["cikis"] = "user/logout";
 
-$route["yazi-listesi"] = "Post";
+$route["yazi-listesi"]  = "Post";
+$route["oyla"] 			= "Post/vote";
