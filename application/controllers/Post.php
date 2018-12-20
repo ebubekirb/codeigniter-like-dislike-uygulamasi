@@ -2,9 +2,11 @@
 
 class Post extends CI_Controller{
 
-	public function __consruct(){
+	public function __construct(){
 
-		parent::__consruct();
+		parent::__construct();
+
+		$this->load->model("Post_model");
 	}
 
 
@@ -12,6 +14,8 @@ class Post extends CI_Controller{
 
 		$viewData = new stdClass();
 		$viewData->user = $this->session->userdata("user");
+
+		$viewData->posts = $this->Post_model->get_all();
 
 		$this->load->view("Post_list_v", $viewData);
 	}
