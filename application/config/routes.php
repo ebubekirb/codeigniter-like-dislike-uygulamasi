@@ -55,3 +55,5 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route["giris-yap"] = "user/login_form";
 $route["giris"] = "user/login";
+
+$route["yazi-listesi"] = "Post";
