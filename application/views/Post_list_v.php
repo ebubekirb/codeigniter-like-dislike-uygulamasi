@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active">
-        	<a href="#">Çıkış Yap <span class="sr-only">(current)</span></a>
+        	<a href="<?php echo base_url("cikis"); ?>">Çıkış Yap <span class="sr-only">(current)</span></a>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -26,13 +26,14 @@
 
 <div class="container">
 	<div class="row">
-		
+		<div class="col-md-8 col-md-offset-2">
 		<?php foreach($posts as $post) { ?>
 			
 			<div class="col-md-12 well">
 			<p>
 				<?php echo $post->title; ?>	
 			</p>
+
 			<div class="thumbs_container">
 				<button class="btn btn-success">
 					<span class="glyphicon glyphicon-thumbs-up"></span>
@@ -47,6 +48,7 @@
 
 
 		<?php } ?>
+		</div>
 	</div>
 </div>
 

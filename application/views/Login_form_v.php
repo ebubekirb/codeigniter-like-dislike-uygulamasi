@@ -5,7 +5,7 @@
 	
 	<?php $this->load->view("inc/include_style"); ?>
 
-	<title>Giriş Yap</title>
+	<title>Giriş</title>
 </head>
 <body>
 	
@@ -23,7 +23,7 @@
 			<div class="col-md-6 col-md-offset-3 well">
 				<form action="<?php echo base_url("giris"); ?>" method="post">
 				  <div class="form-group">
-				    <label">Kullanıcı Adı</label>
+				    <label"><strong>Kullanıcı Adı</strong></label>
 				    <input type="text" name="username" class="form-control" placeholder="Kullanıcı adı">
 				  </div>
 				  <div class="form-group">
