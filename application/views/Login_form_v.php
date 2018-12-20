@@ -12,18 +12,25 @@
 	<div class="container">
 		<h3 class="text-center">Giriş Yap</h3>
 		<hr>
+		<?php if ($this->session->userdata("error")) { ?>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<div class="alert alert-danger"><?php echo $this->session->userdata("error"); ?></div>
+				</div>
+			</div>
+		<?php } ?>
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3 well">
 				<form action="<?php echo base_url("giris"); ?>" method="post">
 				  <div class="form-group">
-				    <label for="exampleInputEmail1">Kullanıcı Adı</label>
-				    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Kullanıcı adı">
+				    <label">Kullanıcı Adı</label>
+				    <input type="text" name="username" class="form-control" placeholder="Kullanıcı adı">
 				  </div>
 				  <div class="form-group">
-				    <label for="exampleInputPassword1">Şifre</label>
-				    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+				    <label>Şifre</label>
+				    <input type="password" name="password" class="form-control" placeholder="Password">
 				  </div>
-				  <button type="submit" class="btn btn-default btn-primary">Giriş Yap</button>
+				  <button type="submit" class="btn btn-default btn-primary btn-block">Giriş Yap</button>
 				</form>
 			</div>
 		</div>
