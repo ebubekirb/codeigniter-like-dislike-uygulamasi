@@ -6,7 +6,7 @@ $(document).ready(function(){
 
 		$.post("http://localhost/CodeIgniter/like_dislike/oyla", { post_id : data_id, vote_status : 1}, function(resp){
 
-			alert(resp);
+			// alert(resp);
 		})
 
 		// alert(data_id);
@@ -18,7 +18,7 @@ $(document).ready(function(){
 
 		$.post("http://localhost/CodeIgniter/like_dislike/oyla", { post_id : data_id, vote_status : -1 }, function(resp){
 
-			alert(resp);
+			// alert(resp);
 		})
 	})
 })
