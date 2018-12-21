@@ -58,7 +58,6 @@ class Post extends CI_Controller{
 				"id" => $vote->id
 			));
 
-			echo "update edildi";
 		}
 
 
@@ -71,9 +70,12 @@ class Post extends CI_Controller{
 				"vote_status"	=> $vote_status
 			));
 
-			echo "eklendi";
 
 		}
+
+		$renderData["posts"] = $this->Post_model->post_list();
+
+		echo $this->load->view("renders/Post_list_render", $renderData, true);
 
 	}
 
