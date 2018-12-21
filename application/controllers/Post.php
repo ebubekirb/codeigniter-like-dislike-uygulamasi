@@ -38,14 +38,43 @@ class Post extends CI_Controller{
 
 		$this->load->model("Vote_model");
 
-		$insert = $this->Vote_model->add(array(
+		$vote = $this->Vote_model->get(
+			array(
+				"post_id" 		=> $post_id,
+				"user_id" 		=> $user_id
+			));
 
-			"post_id" 		=> $post_id,
-			"user_id" 		=> $user_id,
-			"vote_status"	=> $vote_status
-		));
+		if ($vote) {
+			
+			$update = $this->Vote_model->update(
+			array(
+				"post_id" 		=> $post_id,
+				"user_id" 		=> $user_id,
+				"vote_status"	=> $vote_status
+			),
 
-		echo $insert;
+			array(
+
+				"id" => $vote->id
+			));
+
+			echo "update edildi";
+		}
+
+
+		else{
+
+			$insert = $this->Vote_model->add(
+			array(
+				"post_id" 		=> $post_id,
+				"user_id" 		=> $user_id,
+				"vote_status"	=> $vote_status
+			));
+
+			echo "eklendi";
+
+		}
+
 	}
 
 

@@ -23,6 +23,11 @@ class Vote_model extends CI_Model{
 
 		return $this->db->insert($this->table, $insert);
 	}
+
+	public function update($update = array(), $where = array()){
+
+		return $this->db->where($where)->update($this->table, $update);
+	}
 }
 
  ?>
