@@ -25,7 +25,7 @@
 </nav>
 
 <div class="container">
-	<div class="row" id="post_list">
+	<div class="row post_list">
 		<div class="">
 			<?php echo $this->view("renders/Post_list_render", $posts, true); ?>
 		</div>

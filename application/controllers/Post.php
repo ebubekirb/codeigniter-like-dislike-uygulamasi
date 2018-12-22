@@ -45,18 +45,28 @@ class Post extends CI_Controller{
 			));
 
 		if ($vote) {
-			
+
+			if ($vote->vote_status == $vote_status) {
+				
+				$new_vote_status = 0;
+			}
+
+			else{
+
+				$new_vote_status = $vote_status;
+			}
+
 			$update = $this->Vote_model->update(
-			array(
-				"post_id" 		=> $post_id,
-				"user_id" 		=> $user_id,
-				"vote_status"	=> $vote_status
-			),
+				array(
+					"post_id" 		=> $post_id,
+					"user_id" 		=> $user_id,
+					"vote_status"	=> $new_vote_status
+				),
 
-			array(
+				array(
 
-				"id" => $vote->id
-			));
+					"id" => $vote->id
+				));
 
 		}
 
@@ -64,13 +74,11 @@ class Post extends CI_Controller{
 		else{
 
 			$insert = $this->Vote_model->add(
-			array(
-				"post_id" 		=> $post_id,
-				"user_id" 		=> $user_id,
-				"vote_status"	=> $vote_status
-			));
-
-
+				array(
+					"post_id" 		=> $post_id,
+					"user_id" 		=> $user_id,
+					"vote_status"	=> $vote_status
+				));
 		}
 
 		/*$renderData["posts"] = $this->Post_model->post_list();
@@ -82,7 +90,7 @@ class Post extends CI_Controller{
 
 		echo $this->load->view("renders/Post_render", $renderData, true);
 
-	}
+	} 
 
 
 }
