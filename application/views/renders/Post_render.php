@@ -1,6 +1,3 @@
-<?php foreach($posts as $post) { ?>
-			
-	<div class="col-md-8 col-md-offset-2  well post-item">
 	<p>
 		<?php echo $post->title; ?>	
 	</p>
@@ -15,7 +12,3 @@
 			<span class="dislike_count">(<?php echo $post->dislike_count; ?>)</span>
 		</button>
 	</div>
-</div>
-
-
-<?php } ?>
